@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "author": "Djaky Fila Hanifan",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "board-esp32-devkit-c-v4", "id": "esp", "top": 0, "left": 0, "attrs": {} },
+    { "type": "wokwi-photoresistor", "id": "ldr", "top": -80, "left": 100, "attrs": {} },
+    { "type": "wokwi-resistor", "id": "r1", "top": -40, "left": 160, "attrs": { "value": "10000" } }
+  ],
+  "connections": [
+    [ "esp:TX", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX", "$serialMonitor:TX", "", [] ],
+    [ "ldr:0", "esp:3V3", "red", [ "v0" ] ],
+    [ "ldr:1", "esp:34", "green", [ "v0" ] ],
+    [ "ldr:1", "r1:1", "green", [ "v0" ] ],
+    [ "r1:2", "esp:GND.1", "black", [ "v0" ] ]
+  ],
+  "dependencies": {}
+}
